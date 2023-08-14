@@ -43,12 +43,12 @@
             app:layout_constraintStart_toEndOf="@id/img_logo"
             app:layout_constraintTop_toTopOf="@id/constraintLayout" />
 
-        <ImageView
+        <ImageButton
             android:id="@+id/img_user"
             android:layout_width="?actionBarSize"
             android:layout_height="?actionBarSize"
+            android:background="@drawable/ic_main_user"
             android:padding="5dp"
-            android:src="@drawable/ic_main_user"
             app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
             app:layout_constraintEnd_toEndOf="@id/constraintLayout"
             app:layout_constraintStart_toEndOf="@id/txt_main"
