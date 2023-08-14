@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/dialog_rounded_corners"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:ignore="MissingDefaultResource"
+    android:padding="30dp">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:padding="10dp"
+        android:src="@drawable/hun1" />
+
+    <TextView
+        android:layout_width="match_parent"
+
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="포기하지마! 이런 말이 있잖아... 펜은 칼보다 강하다!! 만화가를... 무시하지 마!!!"
+        android:textSize="30dp" />
+
+    <android.widget.Button
+        android:id="@+id/dialog_btn"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners_btn"
+        android:text="확인"
+        android:textColor="#A1A1A1"
+        android:textSize="30dp" />
+</LinearLayout>
