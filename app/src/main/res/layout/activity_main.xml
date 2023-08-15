@@ -24,6 +24,7 @@
             android:layout_height="?actionBarSize"
             android:padding="5dp"
             android:src="@drawable/logo_icon_b"
+            android:background="@drawable/made_circle"
             app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
             app:layout_constraintEnd_toStartOf="@id/txt_main"
             app:layout_constraintStart_toStartOf="@id/constraintLayout"
@@ -75,31 +76,36 @@
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="5dp"
-                android:src="@drawable/bu_profile" />
+                android:src="@drawable/bu_profile"
+                android:background="@drawable/made_circle"/>
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginHorizontal="5dp"
-                android:src="@drawable/ni_profile" />
+                android:src="@drawable/ni_profile"
+                android:background="@drawable/made_circle"/>
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginHorizontal="5dp"
-                android:src="@drawable/pl_profile" />
+                android:src="@drawable/pl_profile"
+                android:background="@drawable/made_circle"/>
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginHorizontal="5dp"
-                android:src="@drawable/de_profile" />
+                android:src="@drawable/de_profile"
+                android:background="@drawable/made_circle"/>
 
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginStart="5dp"
-                android:src="@drawable/go_profile" />
+                android:src="@drawable/go_profile"
+                android:background="@drawable/made_circle"/>
         </LinearLayout>
     </HorizontalScrollView>
 

@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         btnLogin.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left);
         }
 
         val linearLayout = findViewById<LinearLayout>(R.id.linearLayout_post)
