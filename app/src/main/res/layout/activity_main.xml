@@ -24,7 +24,7 @@
             android:layout_height="?actionBarSize"
             android:padding="5dp"
             android:src="@drawable/logo_icon_b"
-            android:background="@drawable/made_circle"
+            app:shapeAppearanceOverlay="@style/circle"
             app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
             app:layout_constraintEnd_toStartOf="@id/txt_main"
             app:layout_constraintStart_toStartOf="@id/constraintLayout"
@@ -72,12 +72,13 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <ImageView
+            <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:layout_marginEnd="5dp"
+                app:shapeAppearanceOverlay="@style/circle"
                 android:src="@drawable/bu_profile"
-                android:background="@drawable/made_circle"/>
+                />
 
             <ImageView
                 android:layout_width="70dp"
