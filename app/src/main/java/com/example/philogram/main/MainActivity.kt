@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.philogram.DetailActivity
 import com.example.philogram.LoginActivity
 import com.example.philogram.R
+import com.example.philogram.UserManager
 
 
 class MainActivity : AppCompatActivity() {
@@ -31,6 +32,12 @@ class MainActivity : AppCompatActivity() {
         initView()
         addProfileItem()
         addPostItem()
+
+        val userName = UserManager.currentUser?.name
+        if (userName != null) {
+            val welcomeText = "$userName 님 환영합니다"
+            findViewById<TextView>(R.id.txt_main).text = welcomeText
+        }
     }
 
     private fun initView() {
