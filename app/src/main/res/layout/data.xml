@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingVertical="30dp"
+
+    >
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -47,4 +51,6 @@
 특유의 공격적 비판으로 인해 오인되기도 하지만, 어떤 철학자보다 넓은 사상의 스펙트럼을 가지고 있는 철학자이며 그의 저서는 보는 사람의 시각에 따라 극단적일 정도로 다양하게 해석되고 있다.
 그러한 까닭 중 하나는 니체 특유의 서술 방식이다. 그의 저작은 대부분 압축적이고 강렬한 아포리즘으로 이루어지며 논리적이라기보다는 문학적이라는 인상을 강하게 남긴다.
 
+
+5문장
 -->

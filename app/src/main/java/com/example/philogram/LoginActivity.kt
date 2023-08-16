@@ -17,6 +17,7 @@ class LoginActivity : AppCompatActivity() {
         txtSignUp.setOnClickListener {
             val intent = Intent(this, SignupActivity::class.java)
             startActivity(intent)
+            overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left);
         }
 
         findViewById<Button>(R.id.btn_login).setOnClickListener {
