@@ -30,7 +30,7 @@
         app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintBottom_toTopOf="@+id/txt_nation"
-        app:layout_constraintEnd_toStartOf="@+id/edit_nickname"
+        app:layout_constraintEnd_toStartOf="@+id/edt_nickname"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_logo" />
 
