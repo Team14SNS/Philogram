@@ -10,7 +10,7 @@ import androidx.appcompat.app.AlertDialog
 class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.detail_activity)
+        setContentView(R.layout.activity_detail)
 
         val edit_txt = findViewById<TextView>(R.id.edit_txt)
 
@@ -29,7 +29,7 @@ class DetailActivity : AppCompatActivity() {
         val alertDialog = dialogBuilder.create()
         alertDialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        val dialog_btn = dialogView.findViewById<Button>(R.id.dialog_btn) // dialogView에서 버튼을 찾음
+        val dialog_btn = dialogView.findViewById<Button>(R.id.dialog_btn)
         dialog_btn.setOnClickListener {
             alertDialog.dismiss()
         }

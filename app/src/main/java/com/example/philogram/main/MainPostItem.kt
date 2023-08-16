@@ -1,6 +1,6 @@
-package com.example.philogram
+package com.example.philogram.main
 
-data class PostItem(
+data class MainPostItem(
     val imgPostProfile: Int,
     val txtPostUserName: String,
     val imgPostPicture: Int,
