@@ -4,6 +4,7 @@ import android.content.Intent
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -12,7 +13,7 @@ import com.example.philogram.DetailActivity
 import com.example.philogram.LoginActivity
 import com.example.philogram.R
 import com.example.philogram.TestValues.postItems
-
+import com.example.philogram.UserManager
 
 class MainActivity : AppCompatActivity() {
     private val imgUser by lazy {
@@ -32,6 +33,12 @@ class MainActivity : AppCompatActivity() {
         initView()
         addProfileItem()
         addPostItem()
+
+        val userName = UserManager.currentUser?.name
+        if (userName != null) {
+            val welcomeText = "$userName 님 환영합니다"
+            findViewById<TextView>(R.id.txt_main).text = welcomeText
+        }
     }
 
     private fun initView() {
@@ -73,6 +80,7 @@ class MainActivity : AppCompatActivity() {
             val txtPostUserName = itemView.findViewById<TextView>(R.id.txt_post_userName)
             val imgPostPicture = itemView.findViewById<ImageView>(R.id.img_post_picture)
             val txtPostContent = itemView.findViewById<TextView>(R.id.txt_post_content)
+            val txtPostMore = itemView.findViewById<TextView>(R.id.txt_post_more)
 
             imtPostProfile.setImageResource(item.imgPostProfile)
             txtPostUserName.text = item.txtPostUserName
