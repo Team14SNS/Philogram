@@ -1,5 +1,6 @@
 package com.example.philogram
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,12 +13,18 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val edit_txt = findViewById<TextView>(R.id.edit_txt)
+        val txtUserName = findViewById<TextView>(R.id.txt_username)
 
-        edit_txt.setOnClickListener {
+        txtUserName.setOnClickListener {
             showFeedDialog()
             setContentView(R.layout.activity_main)
         }
+        val txtEdit = findViewById<TextView>(R.id.txt_edit)
+
+        txtEdit.setOnClickListener {
+            startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
+        }
+
     }
 
     fun showFeedDialog() {

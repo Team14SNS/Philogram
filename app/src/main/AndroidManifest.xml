@@ -16,7 +16,9 @@
             android:exported="false" />
         <activity
             android:name=".MyPageEditActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="sensor" />
         <activity
             android:name=".DetailActivity"
             android:configChanges="screenSize|orientation"
