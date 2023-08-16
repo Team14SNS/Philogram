@@ -21,7 +21,7 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            val newUser = User(id, name, nickname, pw)
+            val newUser = User(id, pw, name, nickname)
             UserManager.addUser(newUser)
 
             Toast.makeText(this, "회원가입 성공!", Toast.LENGTH_SHORT).show()

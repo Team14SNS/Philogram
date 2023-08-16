@@ -38,6 +38,7 @@
         android:layout_marginTop="20dp"
         android:background="@drawable/login_edit_border"
         android:hint="비밀번호 입력"
+        android:inputType="textPassword"
         android:paddingLeft="12dp"
         app:layout_constraintBottom_toTopOf="@id/btn_login"
         app:layout_constraintEnd_toEndOf="parent"

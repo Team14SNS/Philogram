@@ -24,7 +24,9 @@
             android:screenOrientation="sensor" />
         <activity
             android:name=".SignupActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="sensor"/>
         <activity
             android:name=".LoginActivity"
             android:exported="false"
