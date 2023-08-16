@@ -4,6 +4,7 @@ import android.content.Intent
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -61,6 +62,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
     private fun addPostItem() {
         val postItems = listOf(
             MainPostItem(R.drawable.buddha_profile, "Buddha", R.drawable.buddha1, "석가모니는 불교의 교조이자 창시자이며, 여러 붓다(부처) 중 하나다. 본명은 고타마 싯타르타. 고타마가 성씨이며 싯타르타가 이름이다."),
@@ -81,6 +83,7 @@ class MainActivity : AppCompatActivity() {
             val txtPostUserName = itemView.findViewById<TextView>(R.id.txt_post_userName)
             val imgPostPicture = itemView.findViewById<ImageView>(R.id.img_post_picture)
             val txtPostContent = itemView.findViewById<TextView>(R.id.txt_post_content)
+            val txtPostMore = itemView.findViewById<TextView>(R.id.txt_post_more)
 
             imtPostProfile.setImageResource(item.imgPostProfile)
             txtPostUserName.text = item.txtPostUserName
