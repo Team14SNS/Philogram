@@ -33,16 +33,10 @@
             android:configChanges="screenSize|orientation"
             android:screenOrientation="sensor"/>
         <activity
-<<<<<<< HEAD
-            android:name=".MainActivity"
-            android:exported="true">
-
-=======
             android:name=".main.MainActivity"
             android:exported="true"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="sensor">
->>>>>>> a197c9758ec6bf1c1d6f14c2ac71f7714b5a7474
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

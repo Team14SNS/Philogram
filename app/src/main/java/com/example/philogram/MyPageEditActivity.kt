@@ -22,11 +22,11 @@ class MyPageEditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_my_page_edit)
 
 
-    var btn_save = findViewById<Button>(R.id.btn_save)
-
-        btn_save.setOnClickListener{
-
-
-        }
+//    var btn_save = findViewById<Button>(R.id.btn_save)
+//
+//        btn_save.setOnClickListener{
+//
+//
+//        }
     }
 }
