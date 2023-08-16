@@ -5,5 +5,11 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/img_feed"
+        android:padding="2dp"
+        />
 
 </com.example.philogram.SquareFrameLayout>
