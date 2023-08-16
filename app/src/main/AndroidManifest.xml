@@ -28,7 +28,9 @@
             android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:configChanges="screenSize|orientation"
+            android:screenOrientation="sensor"/>
         <activity
             android:name=".main.MainActivity"
             android:exported="true"
