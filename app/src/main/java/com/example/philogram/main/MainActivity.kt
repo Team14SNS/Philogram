@@ -33,16 +33,24 @@ class MainActivity : AppCompatActivity() {
         addPostItem()
     }
 
-    private fun initView() {
+    override fun onResume() {
+        super.onResume()
         val userName = UserManager.currentUser?.name
         if (userName != null) {
             val welcomeText = "$userName 님 환영합니다"
             findViewById<TextView>(R.id.txt_main).text = welcomeText
         }
+    }
 
+    private fun initView() {
         imgUser.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            if(UserManager.currentUser?.name != null) {
+                val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                intent.putExtra("idx", "5")
+                startActivity(intent)
+            } else {
+                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            }
         }
     }
 
