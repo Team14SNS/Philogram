@@ -12,10 +12,16 @@ class SignupActivity : AppCompatActivity() {
         setContentView(R.layout.activity_signup)
 
         findViewById<Button>(R.id.btn_signup).setOnClickListener {
-            val id = findViewById<EditText>(R.id.edt_id).text.toString()
-            val pw = findViewById<EditText>(R.id.edt_pw).text.toString()
-            val name = findViewById<EditText>(R.id.edt_name).text.toString()
-            val nickname = findViewById<EditText>(R.id.edt_nickname).text.toString()
+            val id = findViewById<EditText>(R.id.edt_id).text.toString().trim()
+            val pw = findViewById<EditText>(R.id.edt_pw).text.toString().trim()
+            val name = findViewById<EditText>(R.id.edt_name).text.toString().trim()
+            val nickname = findViewById<EditText>(R.id.edt_nickname).text.toString().trim()
+
+            if (id.isEmpty() || pw.isEmpty() || name.isEmpty() || nickname.isEmpty()) {
+                Toast.makeText(this, "입력하지 않은 정보가 있습니다.", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
+            }
+
             if (UserManager.isUserExist(id)) {
                 Toast.makeText(this, "이미 존재하는 아이디입니다.", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener

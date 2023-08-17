@@ -1,6 +1,6 @@
 package com.example.philogram
 
-data class User(val id: String, val pw: String, val name: String, val nickname: String)
+data class User(val id: String, var pw: String, val name: String, val nickname: String)
 
 object UserManager {
     private val users = mutableListOf<User>()
@@ -25,5 +25,14 @@ object UserManager {
 
     fun isUserExist(id: String): Boolean {
         return findUserById(id) != null
+    }
+
+    fun resetPw(userId: String, newPw: String): Boolean {
+        val user = users.find { it.id == userId }
+        if (user != null) {
+            user.pw = newPw // 해당 User 객체의 pw만 변경
+            return true
+        }
+        return false
     }
 }

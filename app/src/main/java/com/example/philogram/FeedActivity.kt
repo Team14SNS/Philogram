@@ -1,18 +1,23 @@
 package com.example.philogram
 
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import com.example.philogram.TestValues.findUserInfo
+import com.example.philogram.TestValues.getPostingDate
+import com.example.philogram.TestValues.sortByDate
 
 class FeedActivity : AppCompatActivity() {
     private val linearLayoutPost by lazy {
         findViewById<LinearLayout>(R.id.linearLayout_post)
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_feed)
@@ -24,7 +29,6 @@ class FeedActivity : AppCompatActivity() {
 
         val user = findUserInfo(idx)
 
-
         addPostItem(user)
 
         btnBack.setOnClickListener {
@@ -32,6 +36,7 @@ class FeedActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     private fun addPostItem(user: UserInfo) {
         for (feed in user.feed) {
             val itemView = layoutInflater.inflate(R.layout.item_main_post, null)
@@ -55,8 +60,15 @@ class FeedActivity : AppCompatActivity() {
                     isHeart = true
                 }
             }
+
+            // 게시글 이미지 설정...
             imgPostPicture.setImageResource(feed.imgPostPicture)
+
+            // 게시글 본문 설정...
             txtPostContent.text = feed.txtPostContent
+
+            // 포스팅 날짜 설정...
+            txtPostDate.text = getPostingDate(feed)
             var isTxtMore = false
             txtPostMore.setOnClickListener {
                 if (isTxtMore) {
