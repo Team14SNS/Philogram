@@ -17,7 +17,7 @@
             android:layout_height="30dp"
             android:padding="1dp"
             app:shapeAppearanceOverlay="@style/circle"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/change_txt_color"
             app:strokeWidth="1dp" />
 
         <TextView
@@ -27,7 +27,7 @@
             android:layout_marginStart="10dp"
             android:gravity="center"
             android:hint="User Name"
-            android:textColor="@color/black" />
+            android:textColor="@color/change_txt_color" />
 
         <View
             android:layout_width="0dp"
@@ -61,7 +61,7 @@
             android:ellipsize="end"
             android:hint="Content Sample"
             android:maxLines="1"
-            android:textColor="@color/black"
+            android:textColor="@color/change_txt_color"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/txt_post_more"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,4 +87,10 @@
         android:layout_marginBottom="10dp"
         android:text="30분 전"
         android:textColor="@color/gray" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_margin="10dp"
+        android:background="@color/light_gray"/>
 </LinearLayout>
