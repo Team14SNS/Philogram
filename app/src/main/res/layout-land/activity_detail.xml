@@ -13,11 +13,10 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="20dp"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:background="#00FFFFFF"
-            android:scaleType="centerCrop"
-            android:src="@drawable/back_icon" />
+            android:background="@drawable/ic_back"
+            android:scaleType="centerCrop" />
 
         <View
             android:layout_width="0dp"
@@ -36,6 +35,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -46,7 +46,7 @@
             android:layout_marginHorizontal="10dp"
             android:padding="3dp"
             app:shapeAppearanceOverlay="@style/circle"
-            app:strokeColor="@color/black"
+            app:strokeColor="@color/change_blue_color"
             app:strokeWidth="3dp" />
 
         <LinearLayout
@@ -101,7 +101,6 @@
 
                 </LinearLayout>
 
-
             </LinearLayout>
 
             <TextView
@@ -111,14 +110,12 @@
                 android:text="UserName"
                 android:textStyle="bold" />
 
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Aliquam ultricies felis rutrum lacus sollicitudin," />
 
         </LinearLayout>
-
 
     </LinearLayout>
 
@@ -135,8 +132,8 @@
             android:padding="3dp"
             android:rowCount="1">
 
-
         </GridLayout>
+
     </ScrollView>
 
 </LinearLayout>

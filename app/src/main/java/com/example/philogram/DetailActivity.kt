@@ -96,7 +96,7 @@ class DetailActivity : AppCompatActivity() {
 
         textUserName.text = name
         if(idx == 5) {
-            imgProfile.setImageResource(R.drawable.logo_icon_b)
+            imgProfile.setImageResource(R.drawable.ic_logo)
         } else {
             imgProfile.setImageResource(list[0].imgPostProfile)
             for (item in list) {

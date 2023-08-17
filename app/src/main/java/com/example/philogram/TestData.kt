@@ -29,7 +29,7 @@ object TestValues {
             "근대 철학의 포문을 연 프랑스의 철학자, 수학자, 과학자. 그는 방법적 회의를 통해 \"나는 생각한다. 고로 존재한다\"는 것이야말로 모든 것을 의심하더라도 더 이상 의심할 수 없는 진리라 확신하고는, 이를 모든 학문의 제1 원리로 정립하였다."
         ),
         MainPostItem(
-            R.drawable.go_profile,
+            R.drawable.confucius_profile,
             "Confucius",
             R.drawable.confucius1,
             "30대부터 제자 양성을 시작했고, 50대에 이르러 노나라의 중도재(中都宰)를 지냈는데 잘 다스렸다."
@@ -59,31 +59,31 @@ object TestValues {
             "정반왕과 마야부인 사이에서 왕자로 태어났으나, 인간의 삶이 늙고 병들고 죽는 고통으로 이루어져 있다는 것을 인식하고 이를 벗어나고자, 이후 왕세자의 지위를 버리고 출가하여 많은 수행 끝에 '감정이라는 악마'의 유혹을 견뎌내고 보리수 나무 아래에서 깨달음을 얻었다."
         ),
         MainPostItem(
-            R.drawable.go_profile,
+            R.drawable.confucius_profile,
             "Confucius",
             R.drawable.confucius2,
             "공자는 춘추시대 유학(儒學)자이다. 주나라의 예(禮)와 악(樂)을 정리하여 유학의 기초 경전을 정립하였으며,이 예악을 바탕으로 하는 정치 실현을 목표로 수많은 제자들을 가르쳤다. 사실상 유학의 창시자라 볼 수 있다. 노(魯)나라에서 태어나 자랐고, 어려서부터 예(禮)에 밝았다."
         ),
         MainPostItem(
-            R.drawable.go_profile,
+            R.drawable.confucius_profile,
             "Confucius",
             R.drawable.confucius2,
             "공자는 춘추시대 유학(儒學)자이다. 주나라의 예(禮)와 악(樂)을 정리하여 유학의 기초 경전을 정립하였으며,이 예악을 바탕으로 하는 정치 실현을 목표로 수많은 제자들을 가르쳤다. 사실상 유학의 창시자라 볼 수 있다. 노(魯)나라에서 태어나 자랐고, 어려서부터 예(禮)에 밝았다."
         ),
         MainPostItem(
-            R.drawable.go_profile,
+            R.drawable.confucius_profile,
             "Confucius",
             R.drawable.confucius2,
             "공자는 춘추시대 유학(儒學)자이다. 주나라의 예(禮)와 악(樂)을 정리하여 유학의 기초 경전을 정립하였으며,이 예악을 바탕으로 하는 정치 실현을 목표로 수많은 제자들을 가르쳤다. 사실상 유학의 창시자라 볼 수 있다. 노(魯)나라에서 태어나 자랐고, 어려서부터 예(禮)에 밝았다."
         ),
         MainPostItem(
-            R.drawable.go_profile,
+            R.drawable.confucius_profile,
             "Confucius",
             R.drawable.confucius2,
             "공자는 춘추시대 유학(儒學)자이다. 주나라의 예(禮)와 악(樂)을 정리하여 유학의 기초 경전을 정립하였으며,이 예악을 바탕으로 하는 정치 실현을 목표로 수많은 제자들을 가르쳤다. 사실상 유학의 창시자라 볼 수 있다. 노(魯)나라에서 태어나 자랐고, 어려서부터 예(禮)에 밝았다."
         ),
         MainPostItem(
-            R.drawable.go_profile,
+            R.drawable.confucius_profile,
             "Confucius",
             R.drawable.confucius2,
             "공자는 춘추시대 유학(儒學)자이다. 주나라의 예(禮)와 악(樂)을 정리하여 유학의 기초 경전을 정립하였으며,이 예악을 바탕으로 하는 정치 실현을 목표로 수많은 제자들을 가르쳤다. 사실상 유학의 창시자라 볼 수 있다. 노(魯)나라에서 태어나 자랐고, 어려서부터 예(禮)에 밝았다."

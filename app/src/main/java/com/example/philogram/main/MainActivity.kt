@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
             MainProfileItem(R.drawable.nietzsche_profile),
             MainProfileItem(R.drawable.plato_profile),
             MainProfileItem(R.drawable.descartes_profile),
-            MainProfileItem(R.drawable.go_profile)
+            MainProfileItem(R.drawable.confucius_profile)
         )
 
         for (item in profileItems) {
