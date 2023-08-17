@@ -21,20 +21,20 @@
                 android:id="@+id/icon_lock"
                 android:layout_width="300dp"
                 android:layout_height="100dp"
-                android:src="@drawable/baseline_lock_open_24"
+                android:src="@drawable/ic_lock_open"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                />
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/txt_findPw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:text="로그인에 문제가 있나요?"
+                android:textColor="@color/change_txt_color"
                 android:textSize="18sp"
                 android:textStyle="bold"
-                android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/icon_lock" />
@@ -44,7 +44,7 @@
                 android:layout_width="300dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/login_edit_border"
+                android:background="@drawable/edge"
                 android:hint="ID를 입력해주세요."
                 android:paddingLeft="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -57,10 +57,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
-                android:text="비밀번호 재설정"
-                android:textStyle="bold"
-                android:textColor="@color/white"
                 android:background="@drawable/btn_selector"
+                android:text="비밀번호 재설정"
+                android:textColor="@color/white"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/edt_input" />
@@ -74,8 +74,9 @@
         android:layout_height="50dp"
         android:background="@drawable/edge"
         android:gravity="center"
+        android:text="로그인으로 돌아가기"
+        android:textColor="@color/change_txt_color"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:text="로그인으로 돌아가기"/>
+        app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -52,6 +52,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
                 intent.putExtra("idx", "5")
                 startActivity(intent)
+                overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left);
             } else {
                 startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             }
