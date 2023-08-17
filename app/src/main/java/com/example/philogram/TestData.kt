@@ -89,4 +89,34 @@ object TestValues {
             "공자는 춘추시대 유학(儒學)자이다. 주나라의 예(禮)와 악(樂)을 정리하여 유학의 기초 경전을 정립하였으며,이 예악을 바탕으로 하는 정치 실현을 목표로 수많은 제자들을 가르쳤다. 사실상 유학의 창시자라 볼 수 있다. 노(魯)나라에서 태어나 자랐고, 어려서부터 예(禮)에 밝았다."
         ),
     )
+
+    var mapUser = hashMapOf<Int, UserInfo>(
+        0 to UserInfo("Buddha", 5, ArrayList(postItems.filter { it.txtPostUserName == "Buddha" })),
+        1 to UserInfo("Nietzsche", 4, ArrayList(postItems.filter { it.txtPostUserName == "Nietzsche" })),
+        2 to UserInfo("Plato", 3, ArrayList(postItems.filter { it.txtPostUserName == "Plato" })),
+        3 to UserInfo("Descartes", 2, ArrayList(postItems.filter { it.txtPostUserName == "Descartes" })),
+        4 to UserInfo("Confucius", 1, ArrayList(postItems.filter { it.txtPostUserName == "Confucius" })),
+    )
+
+    fun findUserInfo(index:Int) : UserInfo{
+        return mapUser[index]!!
+    }
+
+    fun findUserFeed(index: Int): ArrayList<MainPostItem> {
+        return mapUser[index]!!.feed
+    }
+
+    fun findNameByIndex(index: Int): String {
+        return mapUser[index]!!.name
+    }
+
+    fun getViewByIndex(index: Int) : Int{
+        return mapUser[index]!!.view
+    }
+
+    fun addView(index: Int){
+        mapUser[index]!!.view++
+    }
 }
+
+data class UserInfo(val name:String, var view:Int, var feed:ArrayList<MainPostItem>)
