@@ -113,8 +113,17 @@
                 android:text="UserName"
                 android:textStyle="bold" />
 
+            <TextView
+                android:id="@+id/text_nationality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="text_nationality"
+                android:textStyle="bold"
+                android:textColor="@color/gray"/>
+
 
             <TextView
+                android:id="@+id/txt_introduction"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lorem ipsum dolor sit amet, consecte tur adipiscing elit. Aliquam ultricies felis rutrum lacus sollicitudin," />
