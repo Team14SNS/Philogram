@@ -11,34 +11,34 @@
     <style name="circle">
         <item name="cornerSize">50%</item>
     </style>
-<!--    <style name="SCREEN">-->
-<!--        <item name="android:background">#FFF</item>-->
-<!--    </style>-->
+    <!--    <style name="SCREEN">-->
+    <!--        <item name="android:background">#FFF</item>-->
+    <!--    </style>-->
 
-<!--    <style name="TEXT">-->
-<!--        <item name="android:textColor">#CECCCC</item>-->
-<!--    </style>-->
+    <!--    <style name="TEXT">-->
+    <!--        <item name="android:textColor">#CECCCC</item>-->
+    <!--    </style>-->
 
-<!--    <style name="Background">-->
-<!--        <item name="android:background">#FFFFFF</item>-->
-<!--    </style>-->
+    <!--    <style name="Background">-->
+    <!--        <item name="android:background">#FFFFFF</item>-->
+    <!--    </style>-->
 
-<!--    <style name="BUTTON">-->
-<!--        <item name="android:background">#F6F8F8</item>-->
-<!--        <item name="android:textColor">#FFF</item>-->
-<!--    </style>-->
+    <!--    <style name="BUTTON">-->
+    <!--        <item name="android:background">#F6F8F8</item>-->
+    <!--        <item name="android:textColor">#FFF</item>-->
+    <!--    </style>-->
 
-<!--    <style name="Login_BUTTON">-->
-<!--        <item name="android:background">@drawable/btn_selector</item>-->
-<!--        <item name="android:textColor">@color/white</item>-->
-<!--    </style>-->
+    <!--    <style name="Login_BUTTON">-->
+    <!--        <item name="android:background">@drawable/btn_selector</item>-->
+    <!--        <item name="android:textColor">@color/white</item>-->
+    <!--    </style>-->
 
-<!--    <style name="Logo_Background">-->
-<!--        <item name="android:background">@drawable/logo_black</item>-->
-<!--        <item name="android:padding">20dp</item>-->
-<!--    </style>-->
+    <!--    <style name="Logo_Background">-->
+    <!--        <item name="android:background">@drawable/logo_black</item>-->
+    <!--        <item name="android:padding">20dp</item>-->
+    <!--    </style>-->
 
-<!--    <style name="Arrow_BUTTON">-->
-<!--        <item name="android:background">@drawable/back_icon</item>-->
-<!--    </style>-->
+    <!--    <style name="Arrow_BUTTON">-->
+    <!--        <item name="android:background">@drawable/back_icon</item>-->
+    <!--    </style>-->
 </resources>
