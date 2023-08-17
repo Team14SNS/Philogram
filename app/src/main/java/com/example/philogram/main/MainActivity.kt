@@ -33,15 +33,15 @@ class MainActivity : AppCompatActivity() {
         initView()
         addProfileItem()
         addPostItem()
+    }
 
+    private fun initView() {
         val userName = UserManager.currentUser?.name
         if (userName != null) {
             val welcomeText = "$userName 님 환영합니다"
             findViewById<TextView>(R.id.txt_main).text = welcomeText
         }
-    }
 
-    private fun initView() {
         imgUser.setOnClickListener {
             val intent = Intent(this, LoginActivity::class.java)
             startActivity(intent)
@@ -78,14 +78,38 @@ class MainActivity : AppCompatActivity() {
             val itemView = layoutInflater.inflate(R.layout.item_main_post, null)
             val imtPostProfile = itemView.findViewById<ImageView>(R.id.img_post_profile)
             val txtPostUserName = itemView.findViewById<TextView>(R.id.txt_post_userName)
+            val imgPostHeart = itemView.findViewById<ImageView>(R.id.img_post_heart)
             val imgPostPicture = itemView.findViewById<ImageView>(R.id.img_post_picture)
             val txtPostContent = itemView.findViewById<TextView>(R.id.txt_post_content)
             val txtPostMore = itemView.findViewById<TextView>(R.id.txt_post_more)
+            val txtPostDate = itemView.findViewById<TextView>(R.id.txt_post_date)
 
             imtPostProfile.setImageResource(item.imgPostProfile)
             txtPostUserName.text = item.txtPostUserName
+            var isHeart = false
+            imgPostHeart.setOnClickListener {
+                if(isHeart) {
+                    imgPostHeart.setImageResource(R.drawable.ic_empty_heart)
+                    isHeart = false
+                } else {
+                    imgPostHeart.setImageResource(R.drawable.ic_full_heart)
+                    isHeart = true
+                }
+            }
             imgPostPicture.setImageResource(item.imgPostPicture)
             txtPostContent.text = item.txtPostContent
+            var isTxtMore = false
+            txtPostMore.setOnClickListener {
+                if(isTxtMore) {
+                    txtPostContent.maxLines = 1
+                    txtPostMore.text = "더보기"
+                    isTxtMore = false
+                } else {
+                    txtPostContent.maxLines = 10
+                    txtPostMore.text = "접기"
+                    isTxtMore = true
+                }
+            }
 
             linearLayoutPost.addView(itemView)
         }
