@@ -98,6 +98,9 @@ object TestValues {
         4 to UserInfo("Confucius", 1, ArrayList(postItems.filter { it.txtPostUserName == "Confucius" })),
     )
 
+    fun findUserInfo(index:Int) : UserInfo{
+        return mapUser[index]!!
+    }
 
     fun findUserFeed(index: Int): ArrayList<MainPostItem> {
         return mapUser[index]!!.feed

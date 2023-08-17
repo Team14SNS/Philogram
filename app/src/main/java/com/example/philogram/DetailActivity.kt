@@ -4,14 +4,15 @@ import android.content.Intent
 import android.content.res.Configuration
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.util.Log
 import android.widget.GridLayout
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.philogram.TestValues.addView
 import com.example.philogram.TestValues.findNameByIndex
 import com.example.philogram.TestValues.findUserFeed
+import com.example.philogram.TestValues.findUserInfo
 import com.example.philogram.TestValues.getViewByIndex
 import com.example.philogram.main.MainPostItem
 
@@ -28,10 +29,11 @@ class DetailActivity : AppCompatActivity() {
         val txtPost = findViewById<TextView>(R.id.txt_post)
         val txtView = findViewById<TextView>(R.id.txt_view)
         val txtEdit = findViewById<TextView>(R.id.txt_edit)
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
 
         val intent = intent
         idx = intent.getStringExtra("idx")!!.toInt()
-        var name = findNameByIndex(idx)
+
 
         // 기기의 가로 세로 길이 설정...
         val displayMetrics = DisplayMetrics()
@@ -41,7 +43,12 @@ class DetailActivity : AppCompatActivity() {
         screenHeight = displayMetrics.heightPixels
 
         // user 찾기
-        val userFeed = findUserFeed(idx)
+        val user = findUserInfo(idx)
+
+        val name = user.name
+        val userFeed = user.feed
+
+        // 프로필 초기화...
         initProfile(name, userFeed)
 
         txtPost.text = userFeed.size.toString()
@@ -51,8 +58,13 @@ class DetailActivity : AppCompatActivity() {
         txtEdit.setOnClickListener {
             startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
         }
+
+        btnBack.setOnClickListener {
+            finish()
+        }
     }
 
+    // 가로 세로 전환 시 실행...
     override fun onConfigurationChanged(newConfig: Configuration) {
         super.onConfigurationChanged(newConfig)
 
@@ -92,8 +104,6 @@ class DetailActivity : AppCompatActivity() {
             itemView.setOnClickListener {
                 val intent = Intent(this@DetailActivity, FeedActivity::class.java)
                 intent.putExtra("idx", idx)
-                Log.d("Detail", idx.toString())
-
                 startActivity(intent)
             }
 
