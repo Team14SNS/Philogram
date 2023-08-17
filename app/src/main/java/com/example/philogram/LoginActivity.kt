@@ -33,9 +33,7 @@ class LoginActivity : AppCompatActivity() {
 
             if (UserManager.loginUser(id, pw)) {
                 Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
-                // 로그인 성공 후의 동작 (예: 메인 화면으로 이동) 구현
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
+                finish()
             } else {
                 Toast.makeText(this, "아이디 또는 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
             }

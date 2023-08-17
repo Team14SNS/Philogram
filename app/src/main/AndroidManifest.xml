@@ -12,12 +12,15 @@
         android:theme="@style/Theme.Philogram"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".LoginFindPwActivity"
             android:exported="false"
             android:configChanges="screenSize|orientation"
             android:screenOrientation="sensor"
             />
         <activity
+=======
+>>>>>>> bc6b8acb070fd53084a571ecda721e5cd59c0281
             android:name=".FeedActivity"
             android:exported="false" />
         <activity
@@ -27,7 +30,7 @@
             android:screenOrientation="sensor" />
         <activity
             android:name=".DetailActivity"
-            android:configChanges="screenSize|orientation"
+            android:configChanges="orientation|screenSize"
             android:exported="false"
             android:screenOrientation="sensor" />
         <activity

@@ -3,8 +3,6 @@ package com.example.philogram.main
 import android.content.Intent
 
 import android.os.Bundle
-import android.util.Log
-import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -33,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         initView()
         addProfileItem()
         addPostItem()
+    }
 
+    override fun onResume() {
+        super.onResume()
         val userName = UserManager.currentUser?.name
         if (userName != null) {
             val welcomeText = "$userName 님 환영합니다"
@@ -43,8 +44,13 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         imgUser.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            if(UserManager.currentUser?.name != null) {
+                val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                intent.putExtra("idx", "5")
+                startActivity(intent)
+            } else {
+                startActivity(Intent(this@MainActivity, LoginActivity::class.java))
+            }
         }
     }
 
@@ -78,14 +84,38 @@ class MainActivity : AppCompatActivity() {
             val itemView = layoutInflater.inflate(R.layout.item_main_post, null)
             val imtPostProfile = itemView.findViewById<ImageView>(R.id.img_post_profile)
             val txtPostUserName = itemView.findViewById<TextView>(R.id.txt_post_userName)
+            val imgPostHeart = itemView.findViewById<ImageView>(R.id.img_post_heart)
             val imgPostPicture = itemView.findViewById<ImageView>(R.id.img_post_picture)
             val txtPostContent = itemView.findViewById<TextView>(R.id.txt_post_content)
             val txtPostMore = itemView.findViewById<TextView>(R.id.txt_post_more)
+            val txtPostDate = itemView.findViewById<TextView>(R.id.txt_post_date)
 
             imtPostProfile.setImageResource(item.imgPostProfile)
             txtPostUserName.text = item.txtPostUserName
+            var isHeart = false
+            imgPostHeart.setOnClickListener {
+                if(isHeart) {
+                    imgPostHeart.setImageResource(R.drawable.ic_empty_heart)
+                    isHeart = false
+                } else {
+                    imgPostHeart.setImageResource(R.drawable.ic_full_heart)
+                    isHeart = true
+                }
+            }
             imgPostPicture.setImageResource(item.imgPostPicture)
             txtPostContent.text = item.txtPostContent
+            var isTxtMore = false
+            txtPostMore.setOnClickListener {
+                if(isTxtMore) {
+                    txtPostContent.maxLines = 1
+                    txtPostMore.text = "더보기"
+                    isTxtMore = false
+                } else {
+                    txtPostContent.maxLines = 10
+                    txtPostMore.text = "접기"
+                    isTxtMore = true
+                }
+            }
 
             linearLayoutPost.addView(itemView)
         }

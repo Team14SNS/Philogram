@@ -17,12 +17,15 @@ class MyPageEditActivity : AppCompatActivity() {
         setContentView(R.layout.activity_my_page_edit)
 
 
+
+
     val btn_save = findViewById<Button>(R.id.btn_save)
 
         btn_save.setOnClickListener{
             Toast.makeText(this, "저장", Toast.LENGTH_SHORT).show()
 
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // 다크모드 활성화
+
         }
     }
 }
