@@ -15,9 +15,11 @@
             android:id="@+id/btn_back"
             android:layout_width="20dp"
             android:layout_height="match_parent"
-            android:background="#00FFFFFF"
+
             android:scaleType="centerCrop"
-            android:src="@drawable/back_icon" />
+            android:src="@drawable/back_icon"
+            style="@style/Arrow_BUTTON"
+            />
 
         <View
             android:layout_width="0dp"
