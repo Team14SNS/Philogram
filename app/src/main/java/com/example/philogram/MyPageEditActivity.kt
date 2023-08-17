@@ -24,7 +24,9 @@ class MyPageEditActivity : AppCompatActivity() {
         btn_save.setOnClickListener{
             Toast.makeText(this, "저장", Toast.LENGTH_SHORT).show()
 
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES) // 다크모드 활성화
+
+
+
 
         }
     }
