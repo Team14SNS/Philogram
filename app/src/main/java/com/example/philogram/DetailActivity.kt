@@ -47,6 +47,7 @@ class DetailActivity : AppCompatActivity() {
             txtEdit.text = "편집"
 
             txtEdit.setOnClickListener {
+
                 startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
             }
         }
