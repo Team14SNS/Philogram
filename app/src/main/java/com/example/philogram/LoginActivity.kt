@@ -21,6 +21,12 @@ class LoginActivity : AppCompatActivity() {
             overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left);
         }
 
+        val txtFindPw = findViewById<TextView>(R.id.txt_findPw)
+        txtFindPw.setOnClickListener {
+            val intent = Intent(this, LoginFindPwActivity::class.java)
+            startActivity(intent)
+        }
+
         findViewById<Button>(R.id.btn_login).setOnClickListener {
             val id = findViewById<EditText>(R.id.edit_id).text.toString()
             val pw = findViewById<EditText>(R.id.edit_pw).text.toString()
