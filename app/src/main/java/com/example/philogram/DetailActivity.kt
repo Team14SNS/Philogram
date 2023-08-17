@@ -105,8 +105,8 @@ class DetailActivity : AppCompatActivity() {
         photoGridLayout.removeAllViews()
 
         textUserName.text = name
-        if (idx == 5) {
-            imgProfile.setImageResource(R.drawable.logo_icon_b)
+        if(idx == 5) {
+            imgProfile.setImageResource(R.drawable.ic_logo)
         } else {
             imgProfile.setImageResource(list[0].imgPostProfile)
             for (item in list) {

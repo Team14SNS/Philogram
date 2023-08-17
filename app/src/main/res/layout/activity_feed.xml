@@ -12,11 +12,11 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="20dp"
-            android:layout_height="wrap_content"
-            android:background="#00FFFFFF"
-            android:scaleType="centerCrop"
-            android:src="@drawable/back_icon" />
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_back"
+            android:scaleType="centerCrop" />
+
     </LinearLayout>
 
     <ScrollView
@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" />
-    </ScrollView>
 
+    </ScrollView>
 
 </LinearLayout>
