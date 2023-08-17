@@ -1,18 +1,22 @@
 package com.example.philogram.main
 
 import android.content.Intent
-
+import android.os.Build
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.philogram.DetailActivity
 import com.example.philogram.LoginActivity
 import com.example.philogram.R
+import com.example.philogram.TestValues
 import com.example.philogram.TestValues.postItems
+import com.example.philogram.TestValues.sortByDate
 import com.example.philogram.UserManager
 
+@RequiresApi(Build.VERSION_CODES.O)
 class MainActivity : AppCompatActivity() {
     private val imgUser by lazy {
         findViewById<ImageView>(R.id.img_user)
@@ -44,7 +48,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun initView() {
         imgUser.setOnClickListener {
-            if(UserManager.currentUser?.name != null) {
+            if (UserManager.currentUser?.name != null) {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
                 intent.putExtra("idx", "5")
                 startActivity(intent)
@@ -80,6 +84,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun addPostItem() {
+        sortByDate()
         for (item in postItems) {
             val itemView = layoutInflater.inflate(R.layout.item_main_post, null)
             val imtPostProfile = itemView.findViewById<ImageView>(R.id.img_post_profile)
@@ -94,7 +99,7 @@ class MainActivity : AppCompatActivity() {
             txtPostUserName.text = item.txtPostUserName
             var isHeart = false
             imgPostHeart.setOnClickListener {
-                if(isHeart) {
+                if (isHeart) {
                     imgPostHeart.setImageResource(R.drawable.ic_empty_heart)
                     isHeart = false
                 } else {
@@ -104,9 +109,13 @@ class MainActivity : AppCompatActivity() {
             }
             imgPostPicture.setImageResource(item.imgPostPicture)
             txtPostContent.text = item.txtPostContent
+
+            // 포스팅 날짜 설정...
+            txtPostDate.text = TestValues.getPostingDate(item)
+
             var isTxtMore = false
             txtPostMore.setOnClickListener {
-                if(isTxtMore) {
+                if (isTxtMore) {
                     txtPostContent.maxLines = 1
                     txtPostMore.text = "더보기"
                     isTxtMore = false

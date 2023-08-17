@@ -2,6 +2,7 @@ package com.example.philogram
 
 import android.content.Intent
 import android.content.res.Configuration
+import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -9,6 +10,7 @@ import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.philogram.TestValues.addView
 import com.example.philogram.TestValues.findNameByIndex
@@ -16,9 +18,11 @@ import com.example.philogram.TestValues.findUserFeed
 import com.example.philogram.TestValues.findUserInfo
 import com.example.philogram.TestValues.getViewByIndex
 import com.example.philogram.TestValues.mapUser
+import com.example.philogram.TestValues.sortByDate
 import com.example.philogram.main.MainPostItem
 
 
+@RequiresApi(Build.VERSION_CODES.O)
 class DetailActivity : AppCompatActivity() {
     private var screenWidth: Int = 0
     private var screenHeight: Int = 0
@@ -31,13 +35,15 @@ class DetailActivity : AppCompatActivity() {
         val txtPost = findViewById<TextView>(R.id.txt_post)
         val txtView = findViewById<TextView>(R.id.txt_view)
         val txtEdit = findViewById<TextView>(R.id.txt_edit)
+        val txtNation = findViewById<TextView>(R.id.text_nationality)
+        val txtIntro = findViewById<TextView>(R.id.txt_introduction)
         val btnBack = findViewById<ImageButton>(R.id.btn_back)
 
         val intent = intent
         idx = intent.getStringExtra("idx")!!.toInt()
 
-        if(idx == 5) {
-            mapUser[idx] = UserInfo(UserManager.currentUser!!.name, 0, ArrayList())
+        if (idx == 5) {
+            mapUser[idx] = UserInfo(UserManager.currentUser!!.name, 0, ArrayList(), "한국", "")
             txtEdit.text = "편집"
 
             txtEdit.setOnClickListener {
@@ -60,15 +66,19 @@ class DetailActivity : AppCompatActivity() {
         val user = findUserInfo(idx)
 
         val name = user.name
+
+        // 리스트 값 가져오기...
         val userFeed = user.feed
 
         // 프로필 초기화...
         initProfile(name, userFeed)
 
-        Log.d("진입", userFeed.size.toString())
+        // 인물 정보 설정...
         txtPost.text = userFeed.size.toString()
         addView(idx)
         txtView.text = getViewByIndex(idx).toString()
+        txtNation.text = user.nation
+        txtIntro.text = user.intro
     }
 
     // 가로 세로 전환 시 실행...
@@ -95,7 +105,7 @@ class DetailActivity : AppCompatActivity() {
         photoGridLayout.removeAllViews()
 
         textUserName.text = name
-        if(idx == 5) {
+        if (idx == 5) {
             imgProfile.setImageResource(R.drawable.logo_icon_b)
         } else {
             imgProfile.setImageResource(list[0].imgPostProfile)
