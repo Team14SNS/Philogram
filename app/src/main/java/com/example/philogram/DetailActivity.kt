@@ -7,6 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
+import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -29,36 +30,43 @@ class DetailActivity : AppCompatActivity() {
     private var screenWidth: Int = 0
     private var screenHeight: Int = 0
     private var idx: Int = 0
-    private lateinit var txtPost: TextView
-    private lateinit var txtView: TextView
-    private lateinit var txtEdit: TextView
-    private lateinit var txtLogout: TextView
-    private lateinit var txtNation: TextView
-    private lateinit var txtIntro: TextView
-    private lateinit var btnBack: ImageButton
-    private lateinit var photoGridLayout: GridLayout
-    private lateinit var imgProfile: ImageView
-    private lateinit var textUserName: TextView
+    val btnBack by lazy {
+        findViewById<ImageButton>(R.id.btn_back)
+    }
+    val btnLogout by lazy {
+        findViewById<ImageButton>(R.id.btn_logout)
+    }
+    val btnEdit by lazy {
+        findViewById<ImageButton>(R.id.btn_edit)
+    }
+    val txtPost by lazy {
+        findViewById<TextView>(R.id.txt_post)
+    }
+    val txtView by lazy {
+        findViewById<TextView>(R.id.txt_view)
+    }
+    val txtNation by lazy {
+        findViewById<TextView>(R.id.txt_nationality)
+    }
+    val txtIntro by lazy {
+        findViewById<TextView>(R.id.txt_introduction)
+    }
+    val photoGridLayout by lazy {
+        findViewById<GridLayout>(R.id.photoGridLayout)
+    }
+    val imgProfile by lazy {
+        findViewById<ImageView>(R.id.img_profile)
+    }
+    val textUserName by lazy {
+        findViewById<TextView>(R.id.txt_username)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        // id 찾기...
-        txtPost = findViewById(R.id.txt_post)
-        txtView = findViewById(R.id.txt_view)
-        txtEdit = findViewById(R.id.txt_edit)
-        txtLogout = findViewById(R.id.txt_logout)
-        txtNation = findViewById(R.id.text_nationality)
-        txtIntro = findViewById(R.id.txt_introduction)
-        btnBack = findViewById(R.id.btn_back)
-        photoGridLayout = findViewById(R.id.photoGridLayout)
-        imgProfile = findViewById(R.id.img_profile)
-        textUserName = findViewById(R.id.text_username)
-
-
         val intent = intent
-        idx = intent.getStringExtra("idx")!!.toInt()
+        idx = intent.getIntExtra("idx", -1)
 
         if (idx == 5) {
             mapUser[idx] = UserInfo(
@@ -68,14 +76,16 @@ class DetailActivity : AppCompatActivity() {
                 currentUser!!.nation.toString(),
                 currentUser!!.intro.toString()
             )
-            txtEdit.text = "편집"
-            txtLogout.text = "로그 아웃"
 
-            txtEdit.setOnClickListener {
-                startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
-            }
-            txtLogout.setOnClickListener{
+            btnLogout.visibility = View.VISIBLE
+            btnEdit.visibility = View.VISIBLE
+
+            btnLogout.setOnClickListener {
                 showLogoutDialog()
+            }
+
+            btnEdit.setOnClickListener {
+                startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
             }
         }
 
@@ -92,7 +102,6 @@ class DetailActivity : AppCompatActivity() {
 
         // user 찾기
         val user = findUserInfo(idx)
-
         val name = user.name
 
         // 리스트 값 가져오기...
@@ -119,7 +128,7 @@ class DetailActivity : AppCompatActivity() {
         screenHeight = displayMetrics.heightPixels
 
         // 화면 방향이 변경되었으므로 initProfile 함수를 호출하여 그리드 레이아웃 업데이트
-        idx = intent.getStringExtra("idx")!!.toInt()
+        idx = intent.getIntExtra("idx", -1)
         var name = findNameByIndex(idx)
         val userFeed = findUserFeed(idx)
         initProfile(name, userFeed)

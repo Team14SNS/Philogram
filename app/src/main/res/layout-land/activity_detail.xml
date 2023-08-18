@@ -15,7 +15,7 @@
             android:id="@+id/btn_back"
             android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:background="@drawable/ic_back"
+            android:background="@drawable/ic_back_pressed_selector"
             android:scaleType="centerCrop" />
 
         <View
@@ -23,13 +23,20 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <TextView
-            android:id="@+id/txt_edit"
+        <ImageButton
+            android:id="@+id/btn_logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:clickable="true"
-            android:textSize="20sp"
-            android:textStyle="bold" />
+            android:background="@drawable/ic_logout_pressed_selector"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/btn_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/ic_edit_pressed_selector"
+            android:visibility="invisible" />
     </LinearLayout>
 
     <View
@@ -51,7 +58,7 @@
             android:layout_marginHorizontal="10dp"
             android:padding="3dp"
             app:shapeAppearanceOverlay="@style/circle"
-            app:strokeColor="@color/change_blue_color"
+            app:strokeColor="@color/change_txt_color"
             app:strokeWidth="3dp" />
 
         <LinearLayout
@@ -109,14 +116,14 @@
             </LinearLayout>
 
             <TextView
-                android:id="@+id/text_username"
+                android:id="@+id/txt_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="UserName"
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/text_nationality"
+                android:id="@+id/txt_nationality"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="text_nationality"
@@ -133,9 +140,15 @@
 
     </LinearLayout>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray" />
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp">
 
         <GridLayout
             android:id="@+id/photoGridLayout"
