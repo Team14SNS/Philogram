@@ -44,7 +44,7 @@ class DetailActivity : AppCompatActivity() {
 
         if (idx == 5) {
             mapUser[idx] = UserInfo(UserManager.currentUser!!.name, 0, ArrayList(), "한국", "")
-            txtEdit.text = "편집"
+            txtEdit.text = getString(R.string.edit)
 
             txtEdit.setOnClickListener {
 

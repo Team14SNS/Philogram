@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
         val userName = UserManager.currentUser?.name
         if (userName != null) {
-            val welcomeText = "$userName 님 환영합니다"
+            val welcomeText = getString(R.string.welcome1, userName)
             findViewById<TextView>(R.id.txt_main).text = welcomeText
         }
     }

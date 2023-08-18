@@ -82,7 +82,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="right"
                 android:padding="5dp"
-                android:text="닉네임"
+                android:text="@string/nickname"
 
                 app:layout_constraintBottom_toTopOf="@+id/txt_nation"
                 app:layout_constraintEnd_toStartOf="@+id/edt_nickname"
@@ -111,7 +111,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="국적"
+                android:text="@string/nation"
                 app:layout_constraintBottom_toTopOf="@+id/txt_intro"
                 app:layout_constraintEnd_toStartOf="@+id/edt_nation"
                 app:layout_constraintStart_toStartOf="parent"
@@ -136,7 +136,7 @@
                 android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:padding="3dp"
-                android:text="소개"
+                android:text="@string/introduce"
                 app:layout_constraintEnd_toStartOf="@+id/edt_intro"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_nation" />
@@ -160,7 +160,7 @@
                 android:layout_gravity="end"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/btn_selector"
-                android:text="저장"
+                android:text="@string/save"
                 android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>

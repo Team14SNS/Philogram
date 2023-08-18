@@ -1,0 +1,33 @@
+<resources>
+    <string name="appName">Philogram</string>
+    <string name="titleActivityLogin">LoginActivity</string>
+    <string name="promptEmail">Email</string>
+    <string name="promptPassword">Password</string>
+    <string name="actionSignIn">Sign in or register</string>
+    <string name="actionSignInShort">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalidUsername">Not a valid username</string>
+    <string name="invalidPassword">Password must be >5 characters</string>
+    <string name="loginFailed">"Login failed"</string>
+    <string name="login">Login</string>
+    <string name="hint">Enter ID</string>
+    <string name="hintpw">Enter Password</string>
+    <string name="lostPassword">Forgot your password?</string>
+    <string name="NewSignUp">Do not have an account? sign up</string>
+    <string name="problemLogin">Having trouble login??</string>
+    <string name="id">Please enter your ID.</string>
+    <string name="pwRe">password reset</string>
+    <string name="backLogin">Back to Login page</string>
+    <string name="username">UserName</string>
+    <string name="textNationality">text_nationality</string>
+    <string name="post">Post</string>
+    <string name="view">View</string>
+    <string name="goLogin">Go Login!</string>
+    <string name="nickname">Nickname</string>
+    <string name="nation">Nation</string>
+    <string name="introduce">Introduce</string>
+    <string name="save">Save</string>
+    <string name="welcome1">%1$s Welcome!</string>
+    <string name="edit">Edit</string>
+    <string name="wrong2">ID or Password is incorrect.</string>
+</resources>
