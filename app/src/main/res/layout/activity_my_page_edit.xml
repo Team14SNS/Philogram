@@ -64,14 +64,16 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:padding="5dp"
-                android:text="@string/edit_nickname_txt" />
+                android:text="@string/edit_nickname_txt"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/edt_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edge"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txt_nation"
@@ -80,14 +82,16 @@
                 android:layout_marginTop="20dp"
                 android:gravity="left"
                 android:padding="5dp"
-                android:text="@string/edit_nation_txt" />
+                android:text="@string/edit_nation_txt"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/edt_nation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edge"
-                android:padding="10dp" />
+                android:padding="10dp"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txt_intro"
@@ -96,15 +100,18 @@
                 android:layout_marginTop="20dp"
                 android:gravity="left"
                 android:padding="5dp"
-                android:text="@string/edit_intro_txt" />
+                android:text="@string/edit_intro_txt"
+                android:textSize="15sp" />
 
             <EditText
                 android:id="@+id/edt_intro"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:background="@drawable/edge"
                 android:gravity="start"
-                android:padding="10dp" />
+                android:lines="4"
+                android:padding="10dp"
+                android:textSize="15sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_save"
@@ -114,8 +121,10 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_selector"
+                android:padding="12dp"
                 android:text="@string/edit_save_btn"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

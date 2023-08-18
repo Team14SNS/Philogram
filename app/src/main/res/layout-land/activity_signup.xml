@@ -30,39 +30,47 @@
             <EditText
                 android:id="@+id/edt_id"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/edge"
                 android:hint="@string/signup_id_hint"
-                android:paddingStart="20dp" />
+                android:padding="12dp"
+                android:paddingStart="20dp"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/edt_pw"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edge"
                 android:hint="@string/signup_pw_hint"
                 android:inputType="textPassword"
-                android:paddingStart="20dp" />
+                android:padding="12dp"
+                android:paddingStart="20dp"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/edt_name"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edge"
                 android:hint="@string/signup_name_hint"
-                android:paddingStart="20dp" />
+                android:padding="12dp"
+                android:paddingStart="20dp"
+                android:textSize="18sp" />
 
             <EditText
                 android:id="@+id/edt_nickname"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edge"
                 android:hint="@string/signup_nickname_hint"
-                android:paddingStart="20dp" />
+                android:padding="12dp"
+                android:paddingStart="20dp"
+                android:textSize="18sp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_signup"
@@ -71,8 +79,10 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/btn_selector"
+                android:padding="12dp"
                 android:text="@string/signup_signup_btn"
-                android:textColor="@color/white" />
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
 

@@ -145,7 +145,7 @@ class MainActivity : AppCompatActivity() {
                     txtPostMore.text = getString(R.string.item_main_post_more_expand_txt)
                     isTxtMore = false
                 } else {
-                    txtPostContent.maxLines = 10
+                    txtPostContent.maxLines = 20
                     txtPostMore.text = getString(R.string.item_main_post_more_collapse_txt)
                     isTxtMore = true
                 }
