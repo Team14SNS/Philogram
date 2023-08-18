@@ -8,35 +8,38 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="50dp"
+        tools:layout_editor_absoluteY="81dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
+            android:gravity="center_horizontal"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/logo_img_b"
                 android:layout_width="300dp"
                 android:layout_height="300dp"
+                android:src="@drawable/logo_philogram"
                 app:layout_constraintBottom_toTopOf="@id/edit_id"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed"
-                style="@style/Logo_Background"
-                />
+                app:layout_constraintVertical_chainStyle="packed" />
 
             <EditText
                 android:id="@+id/edit_id"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:background="@drawable/login_edit_border"
-                android:hint="아이디 입력"
+                android:background="@drawable/edge"
+                android:hint="@string/login_id_hint"
                 android:inputType="textMultiLine|textNoSuggestions"
-                android:paddingLeft="12dp"
+                android:padding="12dp"
+                android:paddingStart="12dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/edit_pw"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -45,12 +48,14 @@
             <EditText
                 android:id="@+id/edit_pw"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/login_edit_border"
-                android:hint="비밀번호 입력"
+                android:background="@drawable/edge"
+                android:hint="@string/login_pw_hint"
                 android:inputType="textPassword"
-                android:paddingLeft="12dp"
+                android:padding="12dp"
+                android:paddingStart="12dp"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@id/btn_login"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,32 +64,37 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
                 android:layout_width="300dp"
-                android:layout_height="50dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/login"
+                android:background="@drawable/btn_selector"
+                android:padding="12dp"
+                android:text="@string/login_login_btn"
+                android:textColor="@color/white"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="@id/txt_signup"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/edit_pw"
-                style="@style/Login_BUTTON"
-                />
+                app:layout_constraintTop_toBottomOf="@id/edit_pw" />
 
             <TextView
                 android:id="@+id/txt_findPw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="비밀번호를 잊으셨나요?" />
+                android:text="@string/login_re_pw_txt"
+                android:textSize="15sp" />
 
             <TextView
                 android:id="@+id/txt_signup"
                 android:layout_width="300dp"
-                android:layout_height="70dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/edge"
                 android:gravity="center"
-                android:text="계정이 없으신가요? 가입하기"
+                android:padding="20dp"
+                android:text="@string/login_signup_txt"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

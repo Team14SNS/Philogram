@@ -2,15 +2,18 @@ package com.example.philogram
 
 import android.content.Intent
 import android.content.res.Configuration
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
-import android.util.Log
+import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.philogram.TestValues.addView
 import com.example.philogram.TestValues.findNameByIndex
@@ -18,35 +21,69 @@ import com.example.philogram.TestValues.findUserFeed
 import com.example.philogram.TestValues.findUserInfo
 import com.example.philogram.TestValues.getViewByIndex
 import com.example.philogram.TestValues.mapUser
-import com.example.philogram.TestValues.sortByDate
+import com.example.philogram.UserManager.currentUser
 import com.example.philogram.main.MainPostItem
-
 
 @RequiresApi(Build.VERSION_CODES.O)
 class DetailActivity : AppCompatActivity() {
     private var screenWidth: Int = 0
     private var screenHeight: Int = 0
     private var idx: Int = 0
+    val btnBack by lazy {
+        findViewById<ImageButton>(R.id.btn_back)
+    }
+    val btnLogout by lazy {
+        findViewById<ImageButton>(R.id.btn_logout)
+    }
+    val btnEdit by lazy {
+        findViewById<ImageButton>(R.id.btn_edit)
+    }
+    val txtPost by lazy {
+        findViewById<TextView>(R.id.txt_post)
+    }
+    val txtView by lazy {
+        findViewById<TextView>(R.id.txt_view)
+    }
+    val txtNation by lazy {
+        findViewById<TextView>(R.id.txt_nationality)
+    }
+    val txtIntro by lazy {
+        findViewById<TextView>(R.id.txt_introduction)
+    }
+    val photoGridLayout by lazy {
+        findViewById<GridLayout>(R.id.photoGridLayout)
+    }
+    val imgProfile by lazy {
+        findViewById<ImageView>(R.id.img_profile)
+    }
+    val textUserName by lazy {
+        findViewById<TextView>(R.id.txt_username)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
-        val txtPost = findViewById<TextView>(R.id.txt_post)
-        val txtView = findViewById<TextView>(R.id.txt_view)
-        val txtEdit = findViewById<TextView>(R.id.txt_edit)
-        val txtNation = findViewById<TextView>(R.id.text_nationality)
-        val txtIntro = findViewById<TextView>(R.id.txt_introduction)
-        val btnBack = findViewById<ImageButton>(R.id.btn_back)
-
         val intent = intent
-        idx = intent.getStringExtra("idx")!!.toInt()
+        idx = intent.getIntExtra("idx", -1)
 
         if (idx == 5) {
-            mapUser[idx] = UserInfo(UserManager.currentUser!!.name, 0, ArrayList(), "한국", "")
-            txtEdit.text = "편집"
+            mapUser[idx] = UserInfo(
+                currentUser!!.name,
+                0,
+                ArrayList(),
+                currentUser!!.nation.toString(),
+                currentUser!!.intro.toString()
+            )
 
-            txtEdit.setOnClickListener {
+            btnLogout.visibility = View.VISIBLE
+            btnEdit.visibility = View.VISIBLE
+
+            btnLogout.setOnClickListener {
+                showLogoutDialog()
+            }
+
+            btnEdit.setOnClickListener {
                 startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
             }
         }
@@ -64,7 +101,6 @@ class DetailActivity : AppCompatActivity() {
 
         // user 찾기
         val user = findUserInfo(idx)
-
         val name = user.name
 
         // 리스트 값 가져오기...
@@ -91,22 +127,36 @@ class DetailActivity : AppCompatActivity() {
         screenHeight = displayMetrics.heightPixels
 
         // 화면 방향이 변경되었으므로 initProfile 함수를 호출하여 그리드 레이아웃 업데이트
-        idx = intent.getStringExtra("idx")!!.toInt()
-        var name = findNameByIndex(idx)
+        idx = intent.getIntExtra("idx", -1)
+        val name = findNameByIndex(idx)
         val userFeed = findUserFeed(idx)
         initProfile(name, userFeed)
     }
 
-    private fun initProfile(name: String, list: List<MainPostItem>) {
-        val photoGridLayout: GridLayout = findViewById(R.id.photoGridLayout)
-        val imgProfile = findViewById<ImageView>(R.id.img_profile)
-        val textUserName = findViewById<TextView>(R.id.text_username)
+    override fun onResume() {
+        super.onResume()
+        if (idx == 5) {
+            mapUser[idx] = UserInfo(
+                currentUser!!.name, mapUser[idx]!!.view++, ArrayList(),
+                currentUser!!.nation.toString(), currentUser!!.intro.toString()
+            )
 
+            val user = mapUser[idx]!!
+
+            initProfile(user.name, user.feed)
+        }
+    }
+
+    private fun initProfile(name: String, list: List<MainPostItem>) {
         photoGridLayout.removeAllViews()
 
         textUserName.text = name
         if (idx == 5) {
-            imgProfile.setImageResource(R.drawable.logo_icon_b)
+            imgProfile.setImageResource(R.drawable.ic_logo)
+            txtPost.text = list.size.toString()
+            txtView.text = getViewByIndex(idx).toString()
+            txtNation.text = currentUser!!.nation
+            txtIntro.text = currentUser!!.intro
         } else {
             imgProfile.setImageResource(list[0].imgPostProfile)
             for (item in list) {
@@ -129,5 +179,31 @@ class DetailActivity : AppCompatActivity() {
                 photoGridLayout.addView(itemView)
             }
         }
+    }
+
+    private fun showLogoutDialog() {
+        val builder = AlertDialog.Builder(this)
+        val inflater = layoutInflater
+        val dialogView = inflater.inflate(R.layout.dialog_logout, null)
+
+        builder.setView(dialogView)
+        val dialog = builder.create()
+
+        dialog.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT));
+
+        val btnLogout = dialogView.findViewById<TextView>(R.id.btn_login)
+        val btnCancel = dialogView.findViewById<ImageButton>(R.id.btn_cancle)
+
+        btnLogout.setOnClickListener {
+            currentUser = null
+            dialog.dismiss()
+            finish()
+        }
+
+        btnCancel.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 }

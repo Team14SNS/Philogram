@@ -4,123 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30dp"
     tools:context=".MyPageEditActivity">
 
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@id/view_line"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/ic_back_pressed_selector"
+            android:scaleType="centerCrop" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/light_gray"
+        app:layout_constraintBottom_toTopOf="@id/scrollView"
+        app:layout_constraintTop_toBottomOf="@id/linearLayout" />
 
     <ScrollView
+        android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        >
+        app:layout_constraintTop_toBottomOf="@id/view_line">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
-            >
+            android:paddingHorizontal="30dp">
 
-        <ImageView
-            android:id="@+id/image_logo"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginBottom="50dp"
-            android:src="@drawable/logo_black"
-            app:layout_constraintBottom_toTopOf="@+id/txt_nickname"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_chainStyle="packed" />
+            <ImageView
+                android:id="@+id/image_logo"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_gravity="center"
+                android:layout_marginBottom="30dp"
+                android:src="@drawable/logo_philogram" />
 
-        <TextView
-            android:id="@+id/txt_nickname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="right"
-            android:padding="8dp"
-            android:text="닉네임"
-            app:layout_constraintBottom_toTopOf="@+id/txt_nation"
-            app:layout_constraintEnd_toStartOf="@+id/edt_nickname"
-            app:layout_constraintHorizontal_bias="0.2"
-            app:layout_constraintHorizontal_chainStyle="packed"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+            <TextView
+                android:id="@+id/txt_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="@string/edit_nickname_txt"
+                android:textSize="15sp" />
 
-        <EditText
-            android:id="@+id/edt_nickname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:background="@drawable/edge"
-            android:padding="8dp"
-            android:text="edit_txt"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_nickname"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.8"
-            app:layout_constraintStart_toEndOf="@+id/txt_nickname"
-            app:layout_constraintTop_toTopOf="@+id/txt_nickname" />
+            <EditText
+                android:id="@+id/edt_nickname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edge"
+                android:padding="10dp"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/txt_nation"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:padding="8dp"
-            android:text="국적"
-            app:layout_constraintBottom_toTopOf="@+id/txt_intro"
-            app:layout_constraintEnd_toStartOf="@+id/edt_nation"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_nickname" />
+            <TextView
+                android:id="@+id/txt_nation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="@string/edit_nation_txt"
+                android:textSize="15sp" />
 
-        <EditText
-            android:id="@+id/edt_nation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/edge"
-            android:padding="8dp"
-            android:text="edit_nation"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_nation"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/edt_nickname"
-            app:layout_constraintTop_toTopOf="@+id/txt_nation" />
+            <EditText
+                android:id="@+id/edt_nation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edge"
+                android:padding="10dp"
+                android:textSize="15sp" />
 
-        <TextView
-            android:id="@+id/txt_intro"
-            android:layout_width="wrap_content"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:gravity="center"
-            android:text="소개"
-            app:layout_constraintEnd_toStartOf="@+id/edt_intro"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txt_nation" />
+            <TextView
+                android:id="@+id/txt_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="left"
+                android:padding="5dp"
+                android:text="@string/edit_intro_txt"
+                android:textSize="15sp" />
 
-        <EditText
-            android:id="@+id/edt_intro"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/edge"
-            android:gravity="start"
-            android:padding="10dp"
-            android:text="edit_intro"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/edt_nation"
-            app:layout_constraintTop_toTopOf="@+id/txt_intro" />
+            <EditText
+                android:id="@+id/edt_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/edge"
+                android:gravity="start"
+                android:lines="4"
+                android:padding="10dp"
+                android:scrollbars="vertical"
+                android:textSize="15sp" />
 
-        <Button
-            android:id="@+id/btn_save"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="저장"
-            android:layout_gravity="end"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_save"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/btn_selector"
+                android:padding="12dp"
+                android:text="@string/edit_save_btn"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

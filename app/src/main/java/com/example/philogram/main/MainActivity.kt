@@ -7,7 +7,9 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.philogram.DetailActivity
 import com.example.philogram.LoginActivity
 import com.example.philogram.R
@@ -40,18 +42,19 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val userName = UserManager.currentUser?.name
-        if (userName != null) {
-            val welcomeText = "$userName 님 환영합니다"
-            findViewById<TextView>(R.id.txt_main).text = welcomeText
-        }
+
+        val txtMain = findViewById<TextView>(R.id.txt_main)
+        txtMain.text = if(userName != null) "$userName" + getString(R.string.main_welcome) else getString(R.string.main_login_txt)
+
     }
 
     private fun initView() {
         imgUser.setOnClickListener {
             if (UserManager.currentUser?.name != null) {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
-                intent.putExtra("idx", "5")
+                intent.putExtra("idx", 5)
                 startActivity(intent)
+                overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left);
             } else {
                 startActivity(Intent(this@MainActivity, LoginActivity::class.java))
             }
@@ -64,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             MainProfileItem(R.drawable.nietzsche_profile),
             MainProfileItem(R.drawable.plato_profile),
             MainProfileItem(R.drawable.descartes_profile),
-            MainProfileItem(R.drawable.go_profile)
+            MainProfileItem(R.drawable.confucius_profile)
         )
 
         for (item in profileItems) {
@@ -75,10 +78,10 @@ class MainActivity : AppCompatActivity() {
 
             imgProfile.setOnClickListener {
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
-                intent.putExtra("idx", profileItems.indexOf(item).toString());
+                intent.putExtra("idx", profileItems.indexOf(item))
 
                 startActivity(intent)
-                overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left);
+                overridePendingTransition(R.drawable.slide_right, R.drawable.slide_left)
             }
         }
     }
@@ -87,7 +90,7 @@ class MainActivity : AppCompatActivity() {
         sortByDate()
         for (item in postItems) {
             val itemView = layoutInflater.inflate(R.layout.item_main_post, null)
-            val imtPostProfile = itemView.findViewById<ImageView>(R.id.img_post_profile)
+            val imgPostProfile = itemView.findViewById<ImageView>(R.id.img_post_profile)
             val txtPostUserName = itemView.findViewById<TextView>(R.id.txt_post_userName)
             val imgPostHeart = itemView.findViewById<ImageView>(R.id.img_post_heart)
             val imgPostPicture = itemView.findViewById<ImageView>(R.id.img_post_picture)
@@ -95,10 +98,22 @@ class MainActivity : AppCompatActivity() {
             val txtPostMore = itemView.findViewById<TextView>(R.id.txt_post_more)
             val txtPostDate = itemView.findViewById<TextView>(R.id.txt_post_date)
 
-            imtPostProfile.setImageResource(item.imgPostProfile)
+            imgPostProfile.setImageResource(item.imgPostProfile)
+            imgPostProfile.setOnClickListener { // 게시물 아이콘 클릭 시 디테일페이지 이동
+                val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                intent.putExtra("idx", clickMainPost(item.txtPostUserName))
+                startActivity(intent)
+            }
+
             txtPostUserName.text = item.txtPostUserName
+            txtPostUserName.setOnClickListener { // 게시물 작성자명 클릭 시 디테일페이지 이동
+                val intent = Intent(this@MainActivity, DetailActivity::class.java)
+                intent.putExtra("idx", clickMainPost(item.txtPostUserName))
+                startActivity(intent)
+            }
+
             var isHeart = false
-            imgPostHeart.setOnClickListener {
+            imgPostHeart.setOnClickListener { // 게시물 하트 클릭 리스너
                 if (isHeart) {
                     imgPostHeart.setImageResource(R.drawable.ic_empty_heart)
                     isHeart = false
@@ -107,26 +122,53 @@ class MainActivity : AppCompatActivity() {
                     isHeart = true
                 }
             }
+
             imgPostPicture.setImageResource(item.imgPostPicture)
+            imgPostPicture.setOnClickListener { // 게시물 클릭 시 전체 이미지 출력
+                val dialogView = layoutInflater.inflate(R.layout.dialog_image_popup, null)
+                val ImgDialog = dialogView.findViewById<ImageView>(R.id.img_dialog)
+
+                Glide.with(this).load(item.imgPostPicture).into(ImgDialog)
+
+                val dialog = AlertDialog.Builder(this@MainActivity)
+                    .setView(dialogView)
+                    .create()
+                dialog.window?.setBackgroundDrawableResource(R.color.dialog_transparent)
+                dialog.show()
+            }
+
             txtPostContent.text = item.txtPostContent
-
-            // 포스팅 날짜 설정...
-            txtPostDate.text = TestValues.getPostingDate(item)
-
             var isTxtMore = false
-            txtPostMore.setOnClickListener {
+            txtPostMore.setOnClickListener { // 게시물 1줄 이상일 경우 펼치기 기능
                 if (isTxtMore) {
                     txtPostContent.maxLines = 1
-                    txtPostMore.text = "더보기"
+                    txtPostMore.text = getString(R.string.item_main_post_more_expand_txt)
                     isTxtMore = false
                 } else {
-                    txtPostContent.maxLines = 10
-                    txtPostMore.text = "접기"
+                    txtPostContent.maxLines = 20
+                    txtPostMore.text = getString(R.string.item_main_post_more_collapse_txt)
                     isTxtMore = true
                 }
             }
 
+            txtPostDate.text = TestValues.getPostingDate(item) // 게시물 업로드 일자
+
             linearLayoutPost.addView(itemView)
         }
+    }
+
+    private fun clickMainPost(selectItem: String): Int {
+        if(selectItem.contains("Buddha")) {
+            return 0
+        } else if(selectItem.contains("Nietzsche")) {
+            return 1
+        } else if(selectItem.contains("Plato")) {
+            return 2
+        } else if(selectItem.contains("Descartes")) {
+            return 3
+        } else if(selectItem.contains("Confucius")) {
+            return 4
+        }
+        return -1
     }
 }

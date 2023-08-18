@@ -7,7 +7,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
-import com.example.philogram.main.MainActivity
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,10 +31,10 @@ class LoginActivity : AppCompatActivity() {
             val pw = findViewById<EditText>(R.id.edit_pw).text.toString()
 
             if (UserManager.loginUser(id, pw)) {
-                Toast.makeText(this, "로그인 성공!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_login_success_toast), Toast.LENGTH_SHORT).show()
                 finish()
             } else {
-                Toast.makeText(this, "아이디 또는 비밀번호가 잘못되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_login_fail_toast), Toast.LENGTH_SHORT).show()
             }
         }
     }
