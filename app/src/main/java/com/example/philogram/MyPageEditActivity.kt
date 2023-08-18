@@ -7,8 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
+
+
 
 class MyPageEditActivity : AppCompatActivity() {
     @SuppressLint("SuspiciousIndentation")
@@ -33,6 +36,12 @@ class MyPageEditActivity : AppCompatActivity() {
 
         val btn_save = findViewById<Button>(R.id.btn_save)
 
+        val btn_back = findViewById<ImageButton>(R.id.btn_back)
+
+        btn_back.setOnClickListener{
+            finish()
+        }
+
         btn_save.setOnClickListener{
             Toast.makeText(this, "저장", Toast.LENGTH_SHORT).show()
 
@@ -51,6 +60,7 @@ class MyPageEditActivity : AppCompatActivity() {
             edt_nickname.setText(newNickname)
             edt_nation.setText(newNation)
             edt_intro.setText(newIntro)
+
             finish()
 
         }
