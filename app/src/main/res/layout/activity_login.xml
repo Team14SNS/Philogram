@@ -35,7 +35,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edge"
-                android:hint="@string/hint"
+                android:hint="@string/login_id_hint"
                 android:inputType="textMultiLine|textNoSuggestions"
                 android:paddingStart="12dp"
                 app:layout_constraintBottom_toTopOf="@id/edit_pw"
@@ -49,7 +49,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/edge"
-                android:hint="@string/hintpw"
+                android:hint="@string/login_pw_hint"
                 android:inputType="textPassword"
                 android:paddingStart="12dp"
                 app:layout_constraintBottom_toTopOf="@id/btn_login"
@@ -63,7 +63,7 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/btn_selector"
-                android:text="@string/login"
+                android:text="@string/login_login_btn"
                 android:textColor="@color/white"
                 app:layout_constraintBottom_toBottomOf="@id/txt_signup"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -75,7 +75,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/lostPassword" />
+                android:text="@string/login_re_pw_txt" />
 
             <TextView
                 android:id="@+id/txt_signup"
@@ -85,7 +85,7 @@
                 android:layout_marginBottom="50dp"
                 android:background="@drawable/edge"
                 android:gravity="center"
-                android:text="@string/NewSignUp"
+                android:text="@string/login_signup_txt"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

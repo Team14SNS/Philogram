@@ -26,7 +26,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="10dp"
             android:gravity="center"
-            android:hint="User Name"
+            android:hint="@string/item_main_post_username_hint"
             android:textColor="@color/change_txt_color" />
 
         <View
@@ -59,7 +59,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
-            android:hint="Content Sample"
+            android:hint="@string/item_main_post_content_hint"
             android:maxLines="1"
             android:textColor="@color/change_txt_color"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -72,7 +72,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="5dp"
-            android:text="더보기"
+            android:text="@string/item_main_post_more_expand_txt"
             android:textColor="@color/gray"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/txt_post_content"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:layout_marginBottom="10dp"
-        android:text="30분 전"
+        android:text="@string/item_main_post_date"
         android:textColor="@color/gray" />
 
     <View

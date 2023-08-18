@@ -43,7 +43,7 @@ class MyPageEditActivity : AppCompatActivity() {
         }
 
         btn_save.setOnClickListener{
-            Toast.makeText(this, "저장", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, getString(R.string.edit_save_btn), Toast.LENGTH_SHORT).show()
 
             val newNickname = edt_nickname.text.toString()
             val newNation = edt_nation.text.toString()

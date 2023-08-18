@@ -1,10 +1,8 @@
 package com.example.philogram.main
 
 import android.content.Intent
-import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
-import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -46,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val userName = UserManager.currentUser?.name
 
         val txtMain = findViewById<TextView>(R.id.txt_main)
-        txtMain.text = if(userName != null) "$userName 님 환영합니다" else "로그인 해주세요!"
+        txtMain.text = if(userName != null) "$userName" + getString(R.string.main_welcome) else getString(R.string.main_login_txt)
 
     }
 
@@ -103,7 +101,6 @@ class MainActivity : AppCompatActivity() {
             imgPostProfile.setImageResource(item.imgPostProfile)
             imgPostProfile.setOnClickListener { // 게시물 아이콘 클릭 시 디테일페이지 이동
                 val intent = Intent(this@MainActivity, DetailActivity::class.java)
-                Log.d("MainActivity", item.imgPostProfile.toString())
                 intent.putExtra("idx", clickMainPost(item.txtPostUserName))
                 startActivity(intent)
             }
@@ -145,11 +142,11 @@ class MainActivity : AppCompatActivity() {
             txtPostMore.setOnClickListener { // 게시물 1줄 이상일 경우 펼치기 기능
                 if (isTxtMore) {
                     txtPostContent.maxLines = 1
-                    txtPostMore.text = "더보기"
+                    txtPostMore.text = getString(R.string.item_main_post_more_expand_txt)
                     isTxtMore = false
                 } else {
                     txtPostContent.maxLines = 10
-                    txtPostMore.text = "접기"
+                    txtPostMore.text = getString(R.string.item_main_post_more_collapse_txt)
                     isTxtMore = true
                 }
             }

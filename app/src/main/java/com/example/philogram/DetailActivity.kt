@@ -24,7 +24,6 @@ import com.example.philogram.TestValues.mapUser
 import com.example.philogram.UserManager.currentUser
 import com.example.philogram.main.MainPostItem
 
-
 @RequiresApi(Build.VERSION_CODES.O)
 class DetailActivity : AppCompatActivity() {
     private var screenWidth: Int = 0
@@ -129,7 +128,7 @@ class DetailActivity : AppCompatActivity() {
 
         // 화면 방향이 변경되었으므로 initProfile 함수를 호출하여 그리드 레이아웃 업데이트
         idx = intent.getIntExtra("idx", -1)
-        var name = findNameByIndex(idx)
+        val name = findNameByIndex(idx)
         val userFeed = findUserFeed(idx)
         initProfile(name, userFeed)
     }
@@ -142,9 +141,9 @@ class DetailActivity : AppCompatActivity() {
                 currentUser!!.nation.toString(), currentUser!!.intro.toString()
             )
 
-            val user = mapUser[idx]
+            val user = mapUser[idx]!!
 
-            initProfile(user!!.name, user.feed)
+            initProfile(user.name, user.feed)
         }
     }
 

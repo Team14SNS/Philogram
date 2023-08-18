@@ -1,6 +1,13 @@
 package com.example.philogram
 
-data class User(val id: String, var pw: String, val name: String, var nickname: String, var nation:String? = null, var intro:String? = null)
+data class User(
+    val id: String,
+    var pw: String,
+    val name: String,
+    var nickname: String,
+    var nation:String? = null,
+    var intro:String? = null
+)
 
 object UserManager {
     private val users = mutableListOf<User>()
@@ -9,11 +16,6 @@ object UserManager {
     fun addUser(user: User) {
         users.add(user)
     }
-
-    init {
-        users.add(User("1","1","1","부처", "인도", "안녕하세요 인도 간디입니다."))
-    }
-
 
     fun loginUser(id: String, pw: String): Boolean {
         val user = users.find { it.id == id && it.pw == pw }
