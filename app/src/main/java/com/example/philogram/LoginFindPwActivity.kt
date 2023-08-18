@@ -27,16 +27,16 @@ class LoginFindPwActivity : AppCompatActivity() {
                     isIdChecked = true
                     currentUserId = userId // 아이디 저장
                     edtInput.text.clear()
-                    edtInput.hint = "새 비밀번호 입력"
+                    edtInput.hint = getString(R.string.login_find_new_pw_hint)
                     edtInput.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD // 비밀번호 입력 타입으로 변경
-                    btnAction.text = "비밀번호 변경"
+                    btnAction.text = getString(R.string.login_find_new_pw_btn)
                 }else {
-                    Toast.makeText(this, "일치하는 아이디가 없습니다.", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, getString(R.string.login_find_no_equals_id_toast), Toast.LENGTH_SHORT).show()
                 }
             }else {
                 val newPw = edtInput.text.toString()
                 UserManager.resetPw(currentUserId!!, newPw) // 저장된 아이디 사용
-                Toast.makeText(this, "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.login_find_change_pw_toast), Toast.LENGTH_SHORT).show()
                 finish()
             }
         }

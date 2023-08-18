@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:gravity="right"
             android:paddingEnd="15dp"
-            android:text="@string/goLogin"
+            android:text="@string/main_login_txt"
             android:textColor="@color/change_txt_color"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/constraintLayout"

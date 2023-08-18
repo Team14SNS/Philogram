@@ -73,11 +73,11 @@ class FeedActivity : AppCompatActivity() {
             txtPostMore.setOnClickListener {
                 if (isTxtMore) {
                     txtPostContent.maxLines = 1
-                    txtPostMore.text = "더보기"
+                    txtPostMore.text = getString(R.string.item_main_post_more_expand_txt)
                     isTxtMore = false
                 } else {
                     txtPostContent.maxLines = 10
-                    txtPostMore.text = "접기"
+                    txtPostMore.text = getString(R.string.item_main_post_more_collapse_txt)
                     isTxtMore = true
                 }
             }

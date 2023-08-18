@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:gravity="center_vertical"
         android:padding="10dp"
         app:layout_constraintBottom_toTopOf="@id/view_line"
@@ -19,23 +19,11 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="wrap_content"
+            android:layout_width="30dp"
             android:layout_height="match_parent"
-            android:background="@drawable/ic_back"
+            android:background="@drawable/ic_back_pressed_selector"
             android:scaleType="centerCrop" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/txt_edit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:textSize="20sp"
-            android:textStyle="bold" />
     </LinearLayout>
 
     <View
@@ -68,14 +56,7 @@
                 android:layout_height="250dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="30dp"
-                android:src="@drawable/logo_philogram"
-                app:layout_constraintBottom_toTopOf="@+id/txt_nickname"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed"
-                android:contentDescription="TODO" />
+                android:src="@drawable/logo_philogram" />
 
             <TextView
                 android:id="@+id/txt_nickname"
@@ -83,27 +64,14 @@
                 android:layout_height="wrap_content"
                 android:gravity="left"
                 android:padding="5dp"
-                android:text="@string/nickname"
-
-                app:layout_constraintBottom_toTopOf="@+id/txt_nation"
-                app:layout_constraintEnd_toStartOf="@+id/edt_nickname"
-                app:layout_constraintHorizontal_bias="0.2"
-                app:layout_constraintHorizontal_chainStyle="packed"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/image_logo" />
+                android:text="@string/edit_nickname_txt" />
 
             <EditText
                 android:id="@+id/edt_nickname"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edge"
-                android:padding="8dp"
-                android:text="edit_txt"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_nickname"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.8"
-                app:layout_constraintStart_toEndOf="@+id/txt_nickname"
-                app:layout_constraintTop_toTopOf="@+id/txt_nickname" />
+                android:padding="10dp" />
 
             <TextView
                 android:id="@+id/txt_nation"
@@ -111,36 +79,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="left"
-                android:padding="3dp"
-                android:text="@string/nation"
-                app:layout_constraintBottom_toTopOf="@+id/txt_intro"
-                app:layout_constraintEnd_toStartOf="@+id/edt_nation"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nickname" />
+                android:padding="5dp"
+                android:text="@string/edit_nation_txt" />
 
             <EditText
                 android:id="@+id/edt_nation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/edge"
-                android:padding="8dp"
-                android:text="edit_nation"
-                app:layout_constraintBottom_toBottomOf="@+id/txt_nation"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/edt_nickname"
-                app:layout_constraintTop_toTopOf="@+id/txt_nation" />
+                android:padding="10dp" />
 
             <TextView
                 android:id="@+id/txt_intro"
                 android:layout_width="match_parent"
-                android:layout_height="40dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:gravity="left"
-                android:padding="3dp"
-                android:text="@string/introduce"
-                app:layout_constraintEnd_toStartOf="@+id/edt_intro"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_nation" />
+                android:padding="5dp"
+                android:text="@string/edit_intro_txt" />
 
             <EditText
                 android:id="@+id/edt_intro"
@@ -148,11 +104,7 @@
                 android:layout_height="150dp"
                 android:background="@drawable/edge"
                 android:gravity="start"
-                android:padding="10dp"
-                android:text="edit_intro"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/edt_nation"
-                app:layout_constraintTop_toTopOf="@+id/txt_intro" />
+                android:padding="10dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_save"
@@ -162,7 +114,7 @@
                 android:layout_marginTop="30dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_selector"
-                android:text="@string/save"
+                android:text="@string/edit_save_btn"
                 android:textColor="@color/white" />
         </LinearLayout>
     </ScrollView>
