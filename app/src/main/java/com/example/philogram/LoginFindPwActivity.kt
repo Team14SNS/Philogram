@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.InputType
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class LoginFindPwActivity : AppCompatActivity() {
@@ -37,6 +38,11 @@ class LoginFindPwActivity : AppCompatActivity() {
                 Toast.makeText(this, "비밀번호가 변경되었습니다.", Toast.LENGTH_SHORT).show()
                 finish()
             }
+        }
+
+        val txtAction = findViewById<TextView>(R.id.txt_go_login)
+        txtAction.setOnClickListener {
+            finish()
         }
     }
 }
