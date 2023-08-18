@@ -11,4 +11,5 @@
     <color name="dark_blue">#1877F2</color>
     <color name="change_blue_color">#1877F2</color>
     <color name="transparent">#00000000</color>
+    <color name="dialog_transparent">#E6000000</color>
 </resources>
