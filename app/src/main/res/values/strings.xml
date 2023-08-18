@@ -30,4 +30,6 @@
     <string name="welcome1">%1$s 님 환영합니다</string>
     <string name="edit">편집</string>
     <string name="wrong2">아이디 또는 비밀번호가 잘못되었습니다.</string>
+    <string name="logout">Logout</string>
+    <string name="back">로그인으로 돌아가기</string>
 </resources>

@@ -19,7 +19,7 @@
 
         <ImageButton
             android:id="@+id/btn_back"
-            android:layout_width="30dp"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/ic_back"
             android:scaleType="centerCrop" />
@@ -58,7 +58,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center"
             android:orientation="vertical"
             android:paddingHorizontal="30dp">
 
@@ -74,13 +75,14 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed" />
+                app:layout_constraintVertical_chainStyle="packed"
+                android:contentDescription="TODO" />
 
             <TextView
                 android:id="@+id/txt_nickname"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="left"
                 android:padding="5dp"
                 android:text="@string/nickname"
 
@@ -106,10 +108,10 @@
 
             <TextView
                 android:id="@+id/txt_nation"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:padding="3dp"
                 android:text="@string/nation"
                 app:layout_constraintBottom_toTopOf="@+id/txt_intro"
@@ -131,10 +133,10 @@
 
             <TextView
                 android:id="@+id/txt_intro"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:padding="3dp"
                 android:text="@string/introduce"
                 app:layout_constraintEnd_toStartOf="@+id/edt_intro"
@@ -159,6 +161,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_selector"
                 android:text="@string/save"
                 android:textColor="@color/white" />

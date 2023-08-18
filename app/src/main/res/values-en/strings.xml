@@ -30,4 +30,6 @@
     <string name="welcome1">%1$s Welcome!</string>
     <string name="edit">Edit</string>
     <string name="wrong2">ID or Password is incorrect.</string>
+    <string name="logout">Logout</string>
+    <string name="back">Go back Login</string>
 </resources>

@@ -1,5 +1,6 @@
 package com.example.philogram
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
