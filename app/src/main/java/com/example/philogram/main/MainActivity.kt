@@ -44,8 +44,10 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         val userName = UserManager.currentUser?.name
+
         val txtMain = findViewById<TextView>(R.id.txt_main)
         txtMain.text = if(userName != null) "$userName 님 환영합니다" else "로그인 해주세요!"
+
     }
 
     private fun initView() {
