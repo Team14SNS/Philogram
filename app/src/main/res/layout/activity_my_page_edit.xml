@@ -58,7 +58,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_gravity="center"
+            android:gravity="center_horizontal"
             android:orientation="vertical"
             android:paddingHorizontal="30dp">
 
@@ -78,9 +78,9 @@
 
             <TextView
                 android:id="@+id/txt_nickname"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="left"
                 android:padding="5dp"
                 android:text="닉네임"
 
@@ -106,10 +106,10 @@
 
             <TextView
                 android:id="@+id/txt_nation"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:padding="3dp"
                 android:text="국적"
                 app:layout_constraintBottom_toTopOf="@+id/txt_intro"
@@ -131,10 +131,10 @@
 
             <TextView
                 android:id="@+id/txt_intro"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="20dp"
-                android:gravity="center"
+                android:gravity="left"
                 android:padding="3dp"
                 android:text="소개"
                 app:layout_constraintEnd_toStartOf="@+id/edt_intro"
@@ -159,6 +159,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="end"
                 android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/btn_selector"
                 android:text="저장"
                 android:textColor="@color/white" />
