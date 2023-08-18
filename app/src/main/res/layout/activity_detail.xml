@@ -51,7 +51,7 @@
             android:layout_marginHorizontal="10dp"
             android:padding="3dp"
             app:shapeAppearanceOverlay="@style/circle"
-            app:strokeColor="@color/change_blue_color"
+            app:strokeColor="@color/change_txt_color"
             app:strokeWidth="3dp" />
 
         <LinearLayout
