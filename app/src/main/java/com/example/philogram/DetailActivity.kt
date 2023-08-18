@@ -6,6 +6,7 @@ import android.os.Build
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
+import android.view.View
 import android.widget.GridLayout
 import android.widget.ImageButton
 import android.widget.ImageView
@@ -32,22 +33,27 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail)
 
+        val btnBack = findViewById<ImageButton>(R.id.btn_back)
+        val btnLogout = findViewById<ImageButton>(R.id.btn_logout)
+        val btnEdit = findViewById<ImageButton>(R.id.btn_edit)
         val txtPost = findViewById<TextView>(R.id.txt_post)
         val txtView = findViewById<TextView>(R.id.txt_view)
-        val txtEdit = findViewById<TextView>(R.id.txt_edit)
         val txtNation = findViewById<TextView>(R.id.text_nationality)
         val txtIntro = findViewById<TextView>(R.id.txt_introduction)
-        val btnBack = findViewById<ImageButton>(R.id.btn_back)
 
         val intent = intent
-        idx = intent.getStringExtra("idx")!!.toInt()
+        idx = intent.getIntExtra("idx", -1)
 
         if (idx == 5) {
             mapUser[idx] = UserInfo(UserManager.currentUser!!.name, 0, ArrayList(), "한국", "")
-            txtEdit.text = "편집"
+            btnLogout.visibility = View.VISIBLE
+            btnEdit.visibility = View.VISIBLE
 
-            txtEdit.setOnClickListener {
+            btnLogout.setOnClickListener {
+                //
+            }
 
+            btnEdit.setOnClickListener {
                 startActivity(Intent(this@DetailActivity, MyPageEditActivity::class.java))
             }
         }
@@ -92,7 +98,7 @@ class DetailActivity : AppCompatActivity() {
         screenHeight = displayMetrics.heightPixels
 
         // 화면 방향이 변경되었으므로 initProfile 함수를 호출하여 그리드 레이아웃 업데이트
-        idx = intent.getStringExtra("idx")!!.toInt()
+        idx = intent.getIntExtra("idx", -1)
         var name = findNameByIndex(idx)
         val userFeed = findUserFeed(idx)
         initProfile(name, userFeed)
