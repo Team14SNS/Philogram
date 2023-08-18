@@ -36,6 +36,7 @@
             android:paddingEnd="15dp"
             android:text="@string/main_login_txt"
             android:textColor="@color/change_txt_color"
+            android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="@id/constraintLayout"
             app:layout_constraintEnd_toStartOf="@id/img_user"
