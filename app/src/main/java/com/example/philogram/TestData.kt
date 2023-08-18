@@ -191,7 +191,7 @@ object TestValues {
     var mapUser = hashMapOf(
         0 to UserInfo(
             "Buddha",
-            5,
+            0,
             ArrayList(postItems.filter { it.txtPostUserName == "Buddha" }
                 .sortedByDescending { it.postingDate }),
             "네팔",
@@ -200,7 +200,7 @@ object TestValues {
         ),
         1 to UserInfo(
             "Nietzsche",
-            4,
+            0,
             ArrayList(postItems.filter { it.txtPostUserName == "Nietzsche" }
                 .sortedByDescending { it.postingDate }),
             "독일",
@@ -208,7 +208,7 @@ object TestValues {
         ),
         2 to UserInfo(
             "Plato",
-            3,
+            0,
             ArrayList(postItems.filter { it.txtPostUserName == "Plato" }
                 .sortedByDescending { it.postingDate }),
             "그리스",
@@ -216,7 +216,7 @@ object TestValues {
         ),
         3 to UserInfo(
             "Descartes",
-            2,
+            0,
             ArrayList(postItems.filter { it.txtPostUserName == "Descartes" }
                 .sortedByDescending { it.postingDate }),
             "프랑스",
@@ -224,7 +224,7 @@ object TestValues {
         ),
         4 to UserInfo(
             "Confucius",
-            1,
+            0,
             ArrayList(postItems.filter { it.txtPostUserName == "Confucius" }
                 .sortedByDescending { it.postingDate }),
             "중국",
