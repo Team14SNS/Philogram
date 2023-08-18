@@ -52,7 +52,6 @@ class MyPageEditActivity : AppCompatActivity() {
             edt_nation.setText(newNation)
             edt_intro.setText(newIntro)
             finish()
-
         }
     }
 }
