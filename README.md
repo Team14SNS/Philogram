@@ -42,7 +42,6 @@
 
 #### 2. 로그인 페이지 (LoginActivity)
 <img src="https://github.com/Team14SNS/Philogram/assets/124041716/a8e08d2b-9748-4a29-85b9-ff8e5eb2bd90" width="150">
-<img src="" width="150">
 
 * 아이디, 비밀번호를 입력받는 EditText를 넣어야함. (미리보기 글씨 있어야함)
 * 비밀번호 EditText는 입력 내용이 가려져야 함.
